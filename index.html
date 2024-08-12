@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="app">
+<div class="landing-head">
+    <div class="background-image"></div>
+    <h1>{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+</div>
+<ul id="albums">
+    <album-item v-for="(album, index) in albums" :album="album" :key="index"></album-item>
+</ul>
+
+<p class="blah-blah"><a href="_" target="_blank" rel="noopener noreferrer">@Aditi</a></p>
+</div>
+
+<!-- Include Vue.js library -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+<!-- Include your custom JavaScript file -->
+<script src="app.js"></script>
+</body>
+</html>

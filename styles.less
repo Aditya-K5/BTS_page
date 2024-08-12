@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Playfair+Display:400,700');
+
+@GAP:15px;
+@WHITE:#fbfbfb;
+@TEXT:#45494e;
+@COLOR1:#00EBB3;
+@COLOR2:#FDACAB;
+@COLOR3:#B9ACF1;
+@COLOR4:#F3D55D;
+
+:root{
+--accent-color:@TEXT;
+--highlight-color:@COLOR1;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+background-color:@WHITE;
+color:@TEXT;
+font-family:Nunito, Montserrat, sans-serif;
+font-weight:300;
+line-height:1.5em;
+margin:0 auto;
+padding:0;
+
+max-width:1200px;
+}
+
+h1,h2,h3{
+font-family:"Playfair Display",serif;
+letter-spacing:1px;
+}
+
+.landing-head{
+height:70vh;
+margin:0;
+padding:150px @GAP 0;
+position:relative;
+
+color:@WHITE;
+transition:.5s;
+}
+
+.background-image{
+position:absolute;
+top:0;
+right:0;
+left:0;
+bottom:0;
+z-index:-1;
+
+background:@TEXT url("https://bts.ibighit.com/images/bts/discography/map_of_the_soul-persona/version01-01.jpg");
+background-size:cover;
+background-position:center;
+filter:saturate(.5) brightness(.65);
+
+transition:.5s;
+}
+
+h1{
+font-size:2.5em;
+letter-spacing:2px;
+line-height:1em;
+margin:0;
+}
+.subtitle{
+margin:@GAP/3 0;
+text-transform:uppercase;
+letter-spacing:3px;
+}
+
+#albums{
+list-style:none;
+padding:@GAP*2 0;
+
+> li{
+padding-top:@GAP*2;
+margin:@GAP 0;
+
+background-image:linear-gradient(to bottom,var(--accent-color) 0, var(--accent-color) 200px, transparent 200px, transparent 100%);
+
+&:after{
+    content:"";
+    clear:both;
+    display:block;
+}
+}
+
+figure{
+margin:0;
+padding:0;
+}
+
+img{
+display:block;
+filter:saturate(.5);
+margin:@GAP auto;
+max-width:300px;
+width:90%;
+}
+
+figcaption,.more-info{
+padding:@GAP 15%;
+width:100%;
+}
+
+.release-year{
+display:block;
+font-family:Nunito, Montserrat, sans-serif;
+font-size:.7em;
+font-weight:normal;
+letter-spacing:3px;
+}
+
+.more-info{
+position:relative;
+}
+
+.spotify-link{
+    border-bottom:1px solid transparent;
+color:var(--accent-color);
+
+font-size:.7em;
+font-weight:bold;
+letter-spacing:2px;
+text-decoration:none;
+text-transform:uppercase;
+
+display:block;
+position:relative;
+
+transition:.5s;
+
+&:hover,&:focus{
+    color:var(--highlight-color);
+    border-bottom:1px solid var(--highlight-color);
+    &:before{
+    background-color:var(--highlight-color);
+    }
+}
+
+&:focus{
+    outline:none;
+}
+
+&:before{
+    background-color:var(--accent-color);
+    content:"";
+    height:2px;
+    width:30px;
+    position:absolute;
+    right:100%;
+    top:0;
+    bottom:0;
+    margin:auto @GAP;
+}
+}
+
+.full{
+--accent-color:@COLOR1;
+--highlight-color:@COLOR2;
+}
+.mini{
+--accent-color:@COLOR3;
+--highlight-color:@COLOR4;
+}
+.repackage{
+--accent-color:@COLOR2;
+--highlight-color:@COLOR3;
+}
+.single{
+--accent-color:@COLOR4;
+}
+
+h2{
+display:block;
+margin:0;
+}
+}
+
+.songs {
+padding:@GAP 0;
+li{
+display:inline;
+&:after{
+    content:", ";
+}
+&:last-child:after{
+    content:"";
+}
+}
+}
+
+.blah-blah{
+text-align: center;
+padding:@GAP;
+margin:0 auto;
+}
+
+
+@media(min-width:600px){
+.landing-head{
+padding:200px @GAP * 5 0;
+}
+#albums > li{
+background-image:linear-gradient(to bottom,@WHITE 0, @WHITE 200px, transparent 200px, transparent 450px, @WHITE 450px, @WHITE 100%),linear-gradient(to right,var(--accent-color) 0, var(--accent-color) 50%, transparent 50%, transparent 100%);
+
+&:nth-child(even){
+    background-image:linear-gradient(to bottom,@WHITE 0, @WHITE 200px, transparent 200px, transparent 450px, @WHITE 450px, @WHITE 100%),linear-gradient(to left,var(--accent-color) 0, var(--accent-color) 50%, transparent 50%, transparent 100%);
+    img{
+    float:right;
+    }
+    .spotify-link{
+    right:auto;
+    left:0;
+    transform:rotate(90deg) translateY(100px);
+    }
+    .more-info{
+    margin-left:0;
+    }
+}
+}
+
+#albums{
+h2{
+    height:100px;
+    margin:100px 0 0;
+    transform:rotate(-90deg) translateX(-60px);
+    transform-origin:0 0;
+    max-width:300px;
+}
+
+figcaption{
+    padding:@GAP * 6 @GAP*4 @GAP * 2;
+    width:50%;
+}
+
+.more-info{
+    margin-top:-@GAP*4;
+    margin-left:50%;
+    padding:0 @GAP*4 @GAP*2;
+    width:50%;
+}
+
+img,figcaption,.more-info{
+    box-sizing:border-box;
+    display:inline-block;
+    vertical-align:top;
+}
+
+img{
+    margin:0 5%;
+    max-width:none;
+    width:40%;
+}
+
+.spotify-link{
+    transform:rotate(90deg) translateY(30px);
+    transform-origin:100% 50%;
+    position:absolute;
+    bottom:100%;
+    right:0;
+}
+}
+}
+
+@media(min-width:900px){
+.landing-head{
+    min-height:500px;
+    padding-top:275px;
+}
+#albums img{
+    margin:0 10%;
+    width:30%;
+}
+
+#albums > li{
+margin-bottom:@GAP * 3;
+
+figcaption,.more-info{
+    padding-right:150px;
+}
+
+&:nth-child(even){
+    figcaption,.more-info{
+    padding-right:60px;
+    padding-left:150px; 
+    }
+}
+}
+}
+
+@media (min-width:1200px){
+#albums > li:nth-child(odd) h2{
+transform: rotate(-90deg) translateX(-90px);
+}
+}

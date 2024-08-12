@@ -1,0 +1,269 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDXbtY.ttf) format('truetype');
+}
+:root {
+  --accent-color: #45494e;
+  --highlight-color: #00EBB3;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fbfbfb;
+  color: #45494e;
+  font-family: Nunito, Montserrat, sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+.landing-head {
+  height: 70vh;
+  margin: 0;
+  padding: 150px 15px 0;
+  position: relative;
+  color: #fbfbfb;
+  transition: 0.5s;
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #45494e url("https://bts.ibighit.com/images/bts/discography/map_of_the_soul-persona/version01-01.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5) brightness(0.65);
+  transition: 0.5s;
+}
+h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  line-height: 1em;
+  margin: 0;
+}
+.subtitle {
+  margin: 15px/3 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+#albums {
+  list-style: none;
+  padding: 30px 0;
+}
+#albums > li {
+  padding-top: 30px;
+  margin: 15px 0;
+  background-image: linear-gradient(to bottom, var(--accent-color) 0, var(--accent-color) 200px, transparent 200px, transparent 100%);
+}
+#albums > li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#albums figure {
+  margin: 0;
+  padding: 0;
+}
+#albums img {
+  display: block;
+  filter: saturate(0.5);
+  margin: 15px auto;
+  max-width: 300px;
+  width: 90%;
+}
+#albums figcaption,
+#albums .more-info {
+  padding: 15px 15%;
+  width: 100%;
+}
+#albums .release-year {
+  display: block;
+  font-family: Nunito, Montserrat, sans-serif;
+  font-size: 0.7em;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+#albums .more-info {
+  position: relative;
+}
+#albums .spotify-link {
+  border-bottom: 1px solid transparent;
+  color: var(--accent-color);
+  font-size: 0.7em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  transition: 0.5s;
+}
+#albums .spotify-link:hover,
+#albums .spotify-link:focus {
+  color: var(--highlight-color);
+  border-bottom: 1px solid var(--highlight-color);
+}
+#albums .spotify-link:hover:before,
+#albums .spotify-link:focus:before {
+  background-color: var(--highlight-color);
+}
+#albums .spotify-link:focus {
+  outline: none;
+}
+#albums .spotify-link:before {
+  background-color: var(--accent-color);
+  content: "";
+  height: 2px;
+  width: 30px;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+  margin: auto 15px;
+}
+#albums .full {
+  --accent-color: #00EBB3;
+  --highlight-color: #FDACAB;
+}
+#albums .mini {
+  --accent-color: #B9ACF1;
+  --highlight-color: #F3D55D;
+}
+#albums .repackage {
+  --accent-color: #FDACAB;
+  --highlight-color: #B9ACF1;
+}
+#albums .single {
+  --accent-color: #F3D55D;
+}
+#albums h2 {
+  display: block;
+  margin: 0;
+}
+.songs {
+  padding: 15px 0;
+}
+.songs li {
+  display: inline;
+}
+.songs li:after {
+  content: ", ";
+}
+.songs li:last-child:after {
+  content: "";
+}
+.blah-blah {
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .landing-head {
+    padding: 200px 75px 0;
+  }
+  #albums > li {
+    background-image: linear-gradient(to bottom, #fbfbfb 0, #fbfbfb 200px, transparent 200px, transparent 450px, #fbfbfb 450px, #fbfbfb 100%), linear-gradient(to right, var(--accent-color) 0, var(--accent-color) 50%, transparent 50%, transparent 100%);
+  }
+  #albums > li:nth-child(even) {
+    background-image: linear-gradient(to bottom, #fbfbfb 0, #fbfbfb 200px, transparent 200px, transparent 450px, #fbfbfb 450px, #fbfbfb 100%), linear-gradient(to left, var(--accent-color) 0, var(--accent-color) 50%, transparent 50%, transparent 100%);
+  }
+  #albums > li:nth-child(even) img {
+    float: right;
+  }
+  #albums > li:nth-child(even) .spotify-link {
+    right: auto;
+    left: 0;
+    transform: rotate(90deg) translateY(100px);
+  }
+  #albums > li:nth-child(even) .more-info {
+    margin-left: 0;
+  }
+  #albums h2 {
+    height: 100px;
+    margin: 100px 0 0;
+    transform: rotate(-90deg) translateX(-60px);
+    transform-origin: 0 0;
+    max-width: 300px;
+  }
+  #albums figcaption {
+    padding: 90px 60px 30px;
+    width: 50%;
+  }
+  #albums .more-info {
+    margin-top: -60px;
+    margin-left: 50%;
+    padding: 0 60px 30px;
+    width: 50%;
+  }
+  #albums img,
+  #albums figcaption,
+  #albums .more-info {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+  }
+  #albums img {
+    margin: 0 5%;
+    max-width: none;
+    width: 40%;
+  }
+  #albums .spotify-link {
+    transform: rotate(90deg) translateY(30px);
+    transform-origin: 100% 50%;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+  }
+}
+@media (min-width: 900px) {
+  .landing-head {
+    min-height: 500px;
+    padding-top: 275px;
+  }
+  #albums img {
+    margin: 0 10%;
+    width: 30%;
+  }
+  #albums > li {
+    margin-bottom: 45px;
+  }
+  #albums > li figcaption,
+  #albums > li .more-info {
+    padding-right: 150px;
+  }
+  #albums > li:nth-child(even) figcaption,
+  #albums > li:nth-child(even) .more-info {
+    padding-right: 60px;
+    padding-left: 150px;
+  }
+}
+@media (min-width: 1200px) {
+  #albums > li:nth-child(odd) h2 {
+    transform: rotate(-90deg) translateX(-90px);
+  }
+}
